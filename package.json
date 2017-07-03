@@ -2,7 +2,7 @@
     "name": "app_mobx",
     "author": "Tobias Høegh",
     "version": "0.1.0",
-    "homepage": "/tv2_mobx",
+    "homepage": "/tv2_app_mobx",
     "private": true,
     "dependencies": {
         "autobind-decorator": "^2.0.0",
