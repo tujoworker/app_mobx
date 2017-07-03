@@ -1,0 +1,32 @@
+/**
+ * Some core css hacks
+ *
+ * @author Tobias Høegh <tobias@tujo.no>
+ */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-weight: 100;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue',
+        'Helvetica', sans-serif;
+}
+* {
+    min-height: 0;
+    min-width: 0;
+}
+button,
+input {
+    overflow: visible;
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+button:disabled {
+    cursor: default;
+}
