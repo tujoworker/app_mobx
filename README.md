@@ -1,7 +1,7 @@
 # JSON paginazer 😸
 
 ## Info
-This tiny [React](https://facebook.github.io/react/) based app fetches JSON data from an API point located in the **API.json** file in the same directory.
+This tiny [React](https://facebook.github.io/react/) based app fetches JSON data from an API point, located in the **API.json** file in the same directory.
 
 ## Requirements
 You need a server environment like e.g. Apache or NodeJS and You need JavaScript and a web browser.
@@ -22,7 +22,7 @@ cd [YOUR LOCATION]/app
 npm install
 ```
 
-2. Run the app directly form source
+2. Run the app directly form source. Change the port in the .evn config, or use http://localhost:8080
 
 ```bash
 npm start
