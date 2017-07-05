@@ -6,7 +6,6 @@
 
 //load classes and components
 import React, { Component } from 'react';
-import Fetch from 'react-fetch';
 
 import { observer } from 'mobx-react';
 
@@ -20,7 +19,7 @@ import Config from './config';
 
 //run the main app logic with @observer to make sure the mobx is working
 //1. first show a stats by using {this.state.statesView}
-//2. then the app runs Fetch and gets tha data from the API
+//2. then Fetch runs in componentDidMount
 //3. the data will be added to the store.
 //4. once the store gets data the components PageView and Toolbar will automaticly update its content
 @observer
@@ -31,13 +30,25 @@ class App extends Component {
         this.state = { statesView: <LoadingView text="Loading data ..." /> };
     }
 
+    componentDidMount() {
+        return (
+            fetch(Config.APIURL, {
+                method: 'GET',
+                headers: {
+                    Accept: 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(this.onSuccess.bind(this))
+                .catch(this.onError.bind(this))
+        );
+    }
+
     onSuccess(data) {
         try {
-            // console.log(data);
             this.setState({
                 statesView: <div />
             });
-            // this.rows = [];
             Object.keys(data).forEach(k => {
                 if (!Number.isInteger(parseFloat(k))) {
                     return;
@@ -62,11 +73,6 @@ class App extends Component {
         return (
             <div>
                 {this.state.statesView}
-                <Fetch
-                    url={Config.APIURL}
-                    onSuccess={this.onSuccess.bind(this)}
-                    onError={this.onError.bind(this)}
-                />
                 <div className="pg-app">
                     <div className="pg-app-inner">
                         {Store.current && <Toolbar />}

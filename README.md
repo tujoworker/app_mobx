@@ -22,7 +22,7 @@ cd [YOUR LOCATION]/app
 npm install
 ```
 
-2. Run the app directly form source. Change the port in the .evn config, or use http://localhost:8080
+2. Run the app directly form source. Change the port in the .evn config, or use http://localhost:3000
 
 ```bash
 npm start

@@ -5,5 +5,5 @@
  */
 
 export default {
-    APIURL: 'API.json',
+    APIURL: 'http://localhost:8080/DataConverterWebApp/',
 };
